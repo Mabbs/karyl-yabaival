@@ -21,7 +21,7 @@
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">AprilGames2024</div>
+        <!-- <div id="unity-build-title">AprilGames2024</div> -->
       </div>
     </div>
     <script>
@@ -57,18 +57,33 @@
         updateBannerVisibility();
       }
 
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/April2024_Web.loader.js";
-      var config = {
-        dataUrl: buildUrl + "/April2024_Web.data.unityweb",
-        frameworkUrl: buildUrl + "/April2024_Web.framework.js.unityweb",
-        codeUrl: buildUrl + "/April2024_Web.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "Cygames",
-        productName: "AprilGames2024",
-        productVersion: "1.0",
-        showBanner: unityShowBanner,
-      };
+      if (window.location.search == "?cn"){
+        var buildUrl = "Build-cn";
+        var loaderUrl = buildUrl + "/release.loader.js";
+        var config = {
+          dataUrl: buildUrl + "/release.data.unityweb",
+          frameworkUrl: buildUrl + "/release.framework.js.unityweb",
+          codeUrl: buildUrl + "/release.wasm.unityweb",
+          streamingAssetsUrl: "StreamingAssets",
+          companyName: "Bilibili",
+          productName: "AprilGames2024",
+          productVersion: "1.0",
+          showBanner: unityShowBanner,
+        };
+      } else {
+        var buildUrl = "Build";
+        var loaderUrl = buildUrl + "/April2024_Web.loader.js";
+        var config = {
+          dataUrl: buildUrl + "/April2024_Web.data.unityweb",
+          frameworkUrl: buildUrl + "/April2024_Web.framework.js.unityweb",
+          codeUrl: buildUrl + "/April2024_Web.wasm.unityweb",
+          streamingAssetsUrl: "StreamingAssets",
+          companyName: "Cygames",
+          productName: "AprilGames2024",
+          productVersion: "1.0",
+          showBanner: unityShowBanner,
+        };
+      }
 
       // By default, Unity keeps WebGL canvas render target size matched with
       // the DOM size of the canvas element (scaled by window.devicePixelRatio)
