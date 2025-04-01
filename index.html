@@ -69,8 +69,21 @@
           productName: "AprilGames2024",
           productVersion: "1.0",
           showBanner: unityShowBanner,
-        };
-      } else {
+          };
+        } else if (window.location.search == "?kr") {
+          var buildUrl = "Build";
+          var loaderUrl = buildUrl + "/April2025_Web.loader.js";
+          var config = {
+            dataUrl: buildUrl + "/April2025_Web.data.unityweb",
+            frameworkUrl: buildUrl + "/April2025_Web.framework.js.unityweb",
+            codeUrl: buildUrl + "/April2025_Web.wasm.unityweb",
+            streamingAssetsUrl: "StreamingAssets",
+            companyName: "Cygames",
+            productName: "AprilGames2025",
+            productVersion: "1.0",
+            showBanner: unityShowBanner,
+          };
+        } else {
         var buildUrl = "Build";
         var loaderUrl = buildUrl + "/April2024_Web.loader.js";
         var config = {
